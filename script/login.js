@@ -9,7 +9,7 @@ document.getElementById("loginBtn").addEventListener("click", function () {
   if (phoneNumber == "01234567890" && pin == "1234") {
     // True >> Home page
     alert("Login successfull!");
-    window.location.assign("/home.html");
+    window.location.assign("home.html");
   } else {
     // False >> Alert
     alert("Invallid phone number or pin!");
