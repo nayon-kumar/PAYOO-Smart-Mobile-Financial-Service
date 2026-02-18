@@ -8,10 +8,15 @@ document.getElementById("loginBtn").addEventListener("click", function () {
   // Match mobile number and pin
   if (phoneNumber == "01234567890" && pin == "1234") {
     // True >> Home page
-    alert("Login successfull!");
-    window.location.assign("home.html");
+    document.getElementById("alertHeading").innerText = "Success!";
+    document.getElementById("alertText").innerText = "Login successfull!";
+    document.getElementById("success").addEventListener("click", function () {
+      window.location.assign("home.html");
+    });
   } else {
     // False >> Alert
-    alert("Invallid phone number or pin!");
+    document.getElementById("alertHeading").innerText = "Error!";
+    document.getElementById("alertText").innerText =
+      "Invalid phone number or pin! Use phone number: 01234567890 and pin: 1234 for test.";
   }
 });

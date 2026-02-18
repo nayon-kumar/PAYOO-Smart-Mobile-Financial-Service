@@ -69,9 +69,30 @@
                 placeholder="Enter 4 digit pin"
                 maxlength="4"
               />
-              <button id="loginBtn" class="btn btn-primary mt-4 rounded-full">
+              <!-- You can open the modal using ID.showModal() method -->
+              <button
+                id="loginBtn"
+                class="btn btn-primary mt-4 rounded-full"
+                onclick="my_modal_3.showModal()"
+              >
                 Login
               </button>
+              <dialog id="my_modal_3" class="modal">
+                <div class="modal-box">
+                  <form method="dialog">
+                    <button
+                      id="success"
+                      class="btn btn-sm btn-circle btn-ghost absolute right-2 top-2"
+                    >
+                      ✕
+                    </button>
+                  </form>
+                  <h3 id="alertHeading" class="text-lg font-bold">Hello!</h3>
+                  <p id="alertText" class="py-4">
+                    Press ESC key or click on ✕ button to close
+                  </p>
+                </div>
+              </dialog>
             </fieldset>
           </div>
         </div>
