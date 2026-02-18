@@ -40,8 +40,39 @@
     </style>
   </head>
   <body class="bg-neutral">
-    <main class="min-h-screen max-w-md border-2 mx-auto bg-[#F4F5F7]">
-      <h1>Payoo</h1>
+    <main
+      class="min-h-screen max-w-md mx-auto bg-base-300 flex flex-col justify-center items-center"
+    >
+      <div>
+        <img class="h-15 mx-auto" src="images/Logo-full.png" alt="" />
+      </div>
+      <div class="mt-8">
+        <div
+          class="card bg-base-100 w-full max-w-sm shrink-0 shadow mx-auto rounded-2xl"
+        >
+          <div class="card-body">
+            <fieldset class="fieldset">
+              <label class="label font-black">Mobile Number</label>
+              <input
+                type="text"
+                class="input rounded-full bg-base-300"
+                placeholder="Enter your 11 digit number"
+                maxlength="11"
+              />
+              <br />
+              <label class="label font-black">4 Digit Pin</label>
+              <input
+                type="password"
+                class="input rounded-full bg-base-300"
+                placeholder="Enter 4 digit pin"
+                maxlength="4"
+              />
+              <button class="btn btn-primary mt-4 rounded-full">Login</button>
+            </fieldset>
+          </div>
+        </div>
+      </div>
     </main>
+    <script src="script/login.js"></script>
   </body>
 </html>
