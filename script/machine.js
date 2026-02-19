@@ -20,12 +20,14 @@ function showOnly(id) {
   const cashout = document.getElementById("cashout");
   const transaction = document.getElementById("transaction");
   const transferMoney = document.getElementById("transferMoney");
+  const payBill = document.getElementById("payBill");
 
   // Hide all
   addMoney.classList.add("hidden");
   cashout.classList.add("hidden");
   transaction.classList.add("hidden");
   transferMoney.classList.add("hidden");
+  payBill.classList.add("hidden");
 
   // Show only selected
   const selected = document.getElementById(id);
