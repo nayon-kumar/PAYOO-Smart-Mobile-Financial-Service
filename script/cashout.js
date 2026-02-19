@@ -2,14 +2,14 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
   // Get the agent number nd validate
   const agentNumberValue = getValueFromInput("agentNumber");
   if (agentNumberValue.length !== 11) {
-    alert("Invalid agent number!");
+    myAlertError("Invalid agent number!");
     return;
   }
 
   // Get the cashout amount
   const cashoutAmountValue = getValueFromInput("cashoutAmount");
   if (parseInt(cashoutAmountValue) < 1 || cashoutAmountValue == "") {
-    alert("Invalid amout!");
+    myAlertError("Invalid amout!");
     return;
   }
 
@@ -18,7 +18,7 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
 
   // Calculate new balance
   if (balanceValue - cashoutAmountValue < 0) {
-    alert("invalid amount!");
+    myAlertError("invalid amount!");
     return;
   }
   const newBalance = (balanceValue - cashoutAmountValue).toFixed(2);
@@ -27,7 +27,7 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
   const cashoutPinValue = getValueFromInput("cashoutPin");
   if (cashoutPinValue == "1234") {
     // True >> Show an alert and update balance
-    alert(
+    myAlertSuccess(
       `Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} on ${new Date()}`,
     );
     setBalance(newBalance);
@@ -45,9 +45,13 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
     `;
     // Append new div to history container
     historyContainer.append(newHistory);
+
+    resetInput("agentNumber");
+    resetInput("cashoutAmount");
+    resetInput("cashoutPin");
   } else {
     // False >> Show error alert
-    alert("Invalid Pin!");
+    myAlertError("Invalid Pin!");
     return;
   }
 });

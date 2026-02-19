@@ -4,6 +4,36 @@ function getValueFromInput(id) {
   return value;
 }
 
+function myAlertError(value) {
+  const modal = document.getElementById("my_modal_3");
+  const alertHeading = document.getElementById("alertHeading");
+
+  alertHeading.classList.remove("text-error", "text-success");
+  alertHeading.classList.add("text-error");
+  alertHeading.innerText = "Error!";
+
+  document.getElementById("alertText").innerText = value;
+
+  modal.showModal();
+}
+
+function myAlertSuccess(value) {
+  const modal = document.getElementById("my_modal_3");
+  const alertHeading = document.getElementById("alertHeading");
+
+  alertHeading.classList.remove("text-error", "text-success");
+  alertHeading.classList.add("text-success");
+  alertHeading.innerText = "Success!";
+
+  document.getElementById("alertText").innerText = value;
+
+  modal.showModal();
+}
+
+function resetInput(id) {
+  document.getElementById(id).value = "";
+}
+
 function getBalance() {
   const balanceElement = document.getElementById("balance");
   const balance = balanceElement.innerText;

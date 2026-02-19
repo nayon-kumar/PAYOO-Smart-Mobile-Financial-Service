@@ -2,14 +2,14 @@ document.getElementById("sendNowBtn").addEventListener("click", function () {
   // Get the agent number nd validate
   const transferMoneyNumber = getValueFromInput("transferMoneyNumber");
   if (transferMoneyNumber.length !== 11) {
-    alert("Invalid agent number!");
+    myAlertError("Invalid agent number!");
     return;
   }
 
   // Get the cashout amount
   const transferMoneyAmount = getValueFromInput("transferMoneyAmount");
   if (parseInt(transferMoneyAmount) < 1 || transferMoneyAmount == "") {
-    alert("Invalid amout!");
+    myAlertError("Invalid amout!");
     return;
   }
 
@@ -18,7 +18,7 @@ document.getElementById("sendNowBtn").addEventListener("click", function () {
 
   // Calculate new balance
   if (balanceValue - transferMoneyAmount < 0) {
-    alert("invalid amount!");
+    myAlertError("invalid amount!");
     return;
   }
   const newBalance = (balanceValue - transferMoneyAmount).toFixed(2);
@@ -27,7 +27,7 @@ document.getElementById("sendNowBtn").addEventListener("click", function () {
   const transferMoneyPin = getValueFromInput("transferMoneyPin");
   if (transferMoneyPin == "1234") {
     // True >> Show an alert and update balance
-    alert(
+    myAlertSuccess(
       `Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} on ${new Date()}`,
     );
     setBalance(newBalance);
@@ -45,9 +45,13 @@ document.getElementById("sendNowBtn").addEventListener("click", function () {
     `;
     // Append new div to history container
     historyContainer.append(newHistory);
+
+    resetInput("transferMoneyNumber");
+    resetInput("transferMoneyAmount");
+    resetInput("transferMoneyPin");
   } else {
     // False >> Show error alert
-    alert("Invalid Pin!");
+    myAlertError("Invalid Pin!");
     return;
   }
 });

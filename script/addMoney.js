@@ -2,28 +2,28 @@ document.getElementById("addMoneyBtn").addEventListener("click", function () {
   //   Get bank account number
   const addMoneyBankValue = getValueFromInput("addMoneyBank");
   if (addMoneyBankValue == "Select Bank") {
-    alert("Please select a bank!");
+    myAlertError("Please select a bank!");
     return;
   }
 
   //   Get bank account number
   const addMoneyNumberValue = getValueFromInput("addMoneyNumber");
   if (addMoneyNumberValue.length !== 11) {
-    alert("Invalid account number");
+    myAlertError("Invalid account number");
     return;
   }
 
   //   Get amount
   const addMoneyAmountValue = getValueFromInput("addMoneyAmount");
   if (parseInt(addMoneyAmountValue) < 1 || addMoneyAmountValue == "") {
-    alert("Invalid amount!");
+    myAlertError("Invalid amount!");
     return;
   }
 
   //   Get pin
   const addMoneyPinValue = getValueFromInput("addMoneyPin");
   if (addMoneyPinValue == "1234") {
-    alert(
+    myAlertSuccess(
       `Add money ${addMoneyAmountValue} success from ${addMoneyBankValue} on ${new Date()}`,
     );
     //   Calculate new balance
@@ -44,9 +44,13 @@ document.getElementById("addMoneyBtn").addEventListener("click", function () {
     `;
     // Append new div to history container
     historyContainer.append(newHistory);
+
+    resetInput("addMoneyNumber");
+    resetInput("addMoneyAmount");
+    resetInput("addMoneyPin");
   } else {
     // False Show alert
-    alert("Invalid pin number");
+    myAlertError("Invalid pin number");
     return;
   }
 });

@@ -15,6 +15,9 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     document.getElementById("success").addEventListener("click", function () {
       window.location.href = "home.html";
     });
+
+    resetInput("phoneNumber");
+    resetInput("pin");
   } else {
     alertHeading.classList.add("text-error");
     alertHeading.innerText = "Error!";

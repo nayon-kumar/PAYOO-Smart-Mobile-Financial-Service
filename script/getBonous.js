@@ -1,7 +1,7 @@
 document.getElementById("getBonouwBtn").addEventListener("click", function () {
   const coupon = getValueFromInput("coupon");
   if (coupon == "555") {
-    alert("Success! You got 100 bonous from coupon!");
+    myAlertSuccess("Success! You got 100 bonous from coupon!");
     const prevBalance = getBalance();
     setBalance(prevBalance + 100);
 
@@ -18,7 +18,8 @@ document.getElementById("getBonouwBtn").addEventListener("click", function () {
     `;
     // Append new div to history container
     historyContainer.append(newHistory);
+    resetInput("coupon");
   } else {
-    alert("Invalid coupon! Use 555 to get 100 bonous!");
+    myAlertError("Invalid coupon! Use coupon: 555 to get 100 bonous!");
   }
 });
