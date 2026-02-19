@@ -29,6 +29,20 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
     // True >> Show an alert and update balance
     alert("Cashout successfull!");
     setBalance(newBalance);
+
+    // *Send to transaction history*
+    // Select history container
+    const historyContainer = document.getElementById("historyContainer");
+    // Add new div
+    const newHistory = document.createElement("div");
+    // Add new div innter html
+    newHistory.innerHTML = `
+    <div class="p-5 bg-base-100 rounded-xl">
+      Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} at ${new Date()}
+    </div>
+    `;
+    // Append new div to history container
+    historyContainer.append(newHistory);
   } else {
     // False >> Show error alert
     alert("Invalid Pin!");

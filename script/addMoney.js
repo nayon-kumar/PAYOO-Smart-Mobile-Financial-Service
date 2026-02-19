@@ -23,13 +23,27 @@ document.getElementById("addMoneyBtn").addEventListener("click", function () {
   //   Get pin
   const addMoneyPinValue = getValueFromInput("addMoneyPin");
   if (addMoneyPinValue == "1234") {
-    //   Calculate new balance
     alert(
       `Add money ${addMoneyAmountValue} success from ${addMoneyBankValue} at ${new Date()}`,
     );
+    //   Calculate new balance
     const currentBalance = getBalance();
     const newBalance = currentBalance + Number(addMoneyAmountValue);
     setBalance(newBalance.toFixed(2));
+
+    // *Send to transaction history*
+    // Select history container
+    const historyContainer = document.getElementById("historyContainer");
+    // Add new div
+    const newHistory = document.createElement("div");
+    // Add new div innter html
+    newHistory.innerHTML = `
+    <div class="p-5 bg-base-100 rounded-xl">
+      Add money ${addMoneyAmountValue} success from ${addMoneyBankValue}, acc-no ${addMoneyNumberValue} at ${new Date()}
+    </div>
+    `;
+    // Append new div to history container
+    historyContainer.append(newHistory);
   } else {
     // False Show alert
     alert("Invalid pin number");
