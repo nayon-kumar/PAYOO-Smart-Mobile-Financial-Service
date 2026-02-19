@@ -24,7 +24,7 @@ document.getElementById("payNowBtn").addEventListener("click", function () {
   const payBillPin = getValueFromInput("payBillPin");
   if (payBillPin == "1234") {
     alert(
-      `Pay bill ${payBillAmount} success for ${paybillType} at ${new Date()}`,
+      `Pay bill ${payBillAmount} success for ${paybillType} on ${new Date()}`,
     );
     //   Calculate new balance
     const currentBalance = getBalance();
@@ -39,7 +39,7 @@ document.getElementById("payNowBtn").addEventListener("click", function () {
     // Add new div innter html
     newHistory.innerHTML = `
     <div class="p-5 bg-base-100 rounded-xl">
-      Pay bill ${payBillAmount} success for ${paybillType} at ${new Date()}
+      Pay bill ${payBillAmount} success for ${paybillType} on ${new Date()}
     </div>
     `;
     // Append new div to history container

@@ -28,7 +28,7 @@ document.getElementById("sendNowBtn").addEventListener("click", function () {
   if (transferMoneyPin == "1234") {
     // True >> Show an alert and update balance
     alert(
-      `Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} at ${new Date()}`,
+      `Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} on ${new Date()}`,
     );
     setBalance(newBalance);
 
@@ -40,7 +40,7 @@ document.getElementById("sendNowBtn").addEventListener("click", function () {
     // Add new div innter html
     newHistory.innerHTML = `
     <div class="p-5 bg-base-100 rounded-xl">
-      Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} at ${new Date()}
+      Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} on ${new Date()}
     </div>
     `;
     // Append new div to history container

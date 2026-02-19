@@ -21,6 +21,7 @@ function showOnly(id) {
   const transaction = document.getElementById("transaction");
   const transferMoney = document.getElementById("transferMoney");
   const payBill = document.getElementById("payBill");
+  const getBonous = document.getElementById("getBonous");
 
   // Hide all
   addMoney.classList.add("hidden");
@@ -28,6 +29,7 @@ function showOnly(id) {
   transaction.classList.add("hidden");
   transferMoney.classList.add("hidden");
   payBill.classList.add("hidden");
+  getBonous.classList.add("hidden");
 
   // Show only selected
   const selected = document.getElementById(id);

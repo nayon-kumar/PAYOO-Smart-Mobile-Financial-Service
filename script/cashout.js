@@ -28,7 +28,7 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
   if (cashoutPinValue == "1234") {
     // True >> Show an alert and update balance
     alert(
-      `Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} at ${new Date()}`,
+      `Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} on ${new Date()}`,
     );
     setBalance(newBalance);
 
@@ -40,7 +40,7 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
     // Add new div innter html
     newHistory.innerHTML = `
     <div class="p-5 bg-base-100 rounded-xl">
-      Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} at ${new Date()}
+      Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} on ${new Date()}
     </div>
     `;
     // Append new div to history container

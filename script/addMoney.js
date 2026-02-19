@@ -24,7 +24,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function () {
   const addMoneyPinValue = getValueFromInput("addMoneyPin");
   if (addMoneyPinValue == "1234") {
     alert(
-      `Add money ${addMoneyAmountValue} success from ${addMoneyBankValue} at ${new Date()}`,
+      `Add money ${addMoneyAmountValue} success from ${addMoneyBankValue} on ${new Date()}`,
     );
     //   Calculate new balance
     const currentBalance = getBalance();
@@ -39,7 +39,7 @@ document.getElementById("addMoneyBtn").addEventListener("click", function () {
     // Add new div innter html
     newHistory.innerHTML = `
     <div class="p-5 bg-base-100 rounded-xl">
-      Add money ${addMoneyAmountValue} success from ${addMoneyBankValue}, acc-no ${addMoneyNumberValue} at ${new Date()}
+      Add money ${addMoneyAmountValue} success from ${addMoneyBankValue}, acc-no ${addMoneyNumberValue} on ${new Date()}
     </div>
     `;
     // Append new div to history container
