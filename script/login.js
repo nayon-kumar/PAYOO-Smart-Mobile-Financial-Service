@@ -19,6 +19,6 @@ document.getElementById("loginBtn").addEventListener("click", function () {
     alertHeading.classList.add("text-error");
     alertHeading.innerText = "Error!";
     alertText.innerText =
-      "Invalid phone number or pin! Use mobile number: 01234567890 and pin: 1234 for test.";
+      "Invalid mobile number or pin! Use mobile number: 01234567890 and pin: 1234 for test.";
   }
 });
