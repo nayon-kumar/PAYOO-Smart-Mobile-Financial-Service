@@ -1,14 +1,14 @@
-document.getElementById("cashoutBtn").addEventListener("click", function () {
+document.getElementById("sendNowBtn").addEventListener("click", function () {
   // Get the agent number nd validate
-  const agentNumberValue = getValueFromInput("agentNumber");
-  if (agentNumberValue.length !== 11) {
+  const transferMoneyNumber = getValueFromInput("transferMoneyNumber");
+  if (transferMoneyNumber.length !== 11) {
     alert("Invalid agent number!");
     return;
   }
 
   // Get the cashout amount
-  const cashoutAmountValue = getValueFromInput("cashoutAmount");
-  if (parseInt(cashoutAmountValue) < 1 || cashoutAmountValue == "") {
+  const transferMoneyAmount = getValueFromInput("transferMoneyAmount");
+  if (parseInt(transferMoneyAmount) < 1 || transferMoneyAmount == "") {
     alert("Invalid amout!");
     return;
   }
@@ -17,18 +17,18 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
   const balanceValue = getBalance();
 
   // Calculate new balance
-  if (balanceValue - cashoutAmountValue < 0) {
+  if (balanceValue - transferMoneyAmount < 0) {
     alert("invalid amount!");
     return;
   }
-  const newBalance = (balanceValue - cashoutAmountValue).toFixed(2);
+  const newBalance = (balanceValue - transferMoneyAmount).toFixed(2);
 
   // Get the pin and varify
-  const cashoutPinValue = getValueFromInput("cashoutPin");
-  if (cashoutPinValue == "1234") {
+  const transferMoneyPin = getValueFromInput("transferMoneyPin");
+  if (transferMoneyPin == "1234") {
     // True >> Show an alert and update balance
     alert(
-      `Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} at ${new Date()}`,
+      `Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} at ${new Date()}`,
     );
     setBalance(newBalance);
 
@@ -40,7 +40,7 @@ document.getElementById("cashoutBtn").addEventListener("click", function () {
     // Add new div innter html
     newHistory.innerHTML = `
     <div class="p-5 bg-base-100 rounded-xl">
-      Cashout ${cashoutAmountValue} success to agent number ${agentNumberValue} at ${new Date()}
+      Send money ${transferMoneyAmount} success to number ${transferMoneyNumber} at ${new Date()}
     </div>
     `;
     // Append new div to history container
