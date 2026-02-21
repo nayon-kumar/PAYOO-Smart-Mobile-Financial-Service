@@ -8,6 +8,13 @@ document.getElementById("addMoneyBtn").addEventListener("click", function () {
 
   //   Get bank account number
   const addMoneyNumberValue = getValueFromInput("addMoneyNumber");
+
+  const numberOnlyPattern = /^\d+$/;
+  if (!numberOnlyPattern.test(addMoneyNumberValue)) {
+    myAlertError("Bank account number must contain only digits!");
+    return;
+  }
+
   if (addMoneyNumberValue.length !== 11) {
     myAlertError("Invalid account number");
     return;

@@ -1,6 +1,13 @@
 document.getElementById("cashoutBtn").addEventListener("click", function () {
-  // Get the agent number nd validate
+  // Get the agent number and validate
   const agentNumberValue = getValueFromInput("agentNumber");
+
+  const numberOnlyPattern = /^\d+$/;
+  if (!numberOnlyPattern.test(agentNumberValue)) {
+    myAlertError("Agent number must contain only digits!");
+    return;
+  }
+
   if (agentNumberValue.length !== 11) {
     myAlertError("Invalid agent number!");
     return;

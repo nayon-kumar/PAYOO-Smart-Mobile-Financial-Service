@@ -1,6 +1,13 @@
 document.getElementById("sendNowBtn").addEventListener("click", function () {
   // Get the agent number nd validate
   const transferMoneyNumber = getValueFromInput("transferMoneyNumber");
+
+  const numberOnlyPattern = /^\d+$/;
+  if (!numberOnlyPattern.test(transferMoneyNumber)) {
+    myAlertError("User account number must contain only digits!");
+    return;
+  }
+
   if (transferMoneyNumber.length !== 11) {
     myAlertError("Invalid agent number!");
     return;

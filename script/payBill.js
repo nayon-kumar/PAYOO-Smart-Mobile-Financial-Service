@@ -8,6 +8,13 @@ document.getElementById("payNowBtn").addEventListener("click", function () {
 
   //   Get bank account number
   const payBillNumber = getValueFromInput("payBillNumber");
+
+  const numberOnlyPattern = /^\d+$/;
+  if (!numberOnlyPattern.test(payBillNumber)) {
+    myAlertError("Biller account number must contain only digits!");
+    return;
+  }
+
   if (payBillNumber.length !== 11) {
     myAlertError("Invalid biller account number");
     return;
